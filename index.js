@@ -27,6 +27,7 @@ import "./utils/game/onPlayPauseGame.js";
 import "./utils/game/onResetGame.js";
 import "./utils/game/onRunResetGame.js";
 import "./utils/game/onStartGame.js";
+import "./utils/game/onStopGame.js";
 
 // key binding actions
 import "./utils/keyBindings/index.js";
