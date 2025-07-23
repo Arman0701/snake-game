@@ -8,7 +8,6 @@ export const onRunResetGame = () => {
   if (game.isRunning) {
     onStartGame();
   } else {
-    console.log("game.isRunning :::", game.isRunning);
     onResetGame();
   }
 };

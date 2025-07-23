@@ -37,7 +37,6 @@ export const snake = {
     x: board.unitSize,
     y: 0,
   },
-  headColor: "green",
   bodyColor: "lightgreen",
   borderColor: "red",
   borderSize: 2,

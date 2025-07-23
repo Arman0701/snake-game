@@ -12,7 +12,6 @@ export const onCheckGameOver = () => {
     case snakeHead.x >= width:
     case snakeHead.y < 0:
     case snakeHead.y >= height:
-      console.log("Switch");
       onGameOver();
       break;
   }
