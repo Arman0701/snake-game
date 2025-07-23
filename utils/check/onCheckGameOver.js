@@ -1,4 +1,5 @@
 import { board, game, snake } from "../../constants/gameConfigs.js";
+import { onGameOver } from "../game/onGameOver.js";
 
 export const onCheckGameOver = () => {
   const {
@@ -11,7 +12,7 @@ export const onCheckGameOver = () => {
     case snakeHead.x >= width:
     case snakeHead.y < 0:
     case snakeHead.y >= height:
-      game.isRunning = false;
+      onGameOver();
       break;
   }
 
@@ -20,7 +21,7 @@ export const onCheckGameOver = () => {
       snake.positions[i].x == snakeHead.x &&
       snake.positions[i].y == snakeHead.y
     ) {
-      game.isRunning = false;
+      onGameOver();
     }
   }
 };
