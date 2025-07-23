@@ -4,7 +4,9 @@ import {
   runResetButtonElement,
   scoreTextElement,
 } from "../../game.js";
+import { keybindingsGroup } from "../keyBindings/index.js";
 import { onNextTick } from "../onNextTick.js";
+import { onPlayPauseGame } from "./onPlayPauseGame.js";
 
 export const onStartGame = () => {
   game.isRunning = true;
@@ -13,5 +15,7 @@ export const onStartGame = () => {
   playPauseButtonElement.disabled = false;
   runResetButtonElement.textContent = game.isRunning ? "Reset" : "Run";
 
+  window.addEventListener("keydown", keybindingsGroup);
+  playPauseButtonElement.addEventListener("click", onPlayPauseGame);
   onNextTick();
 };

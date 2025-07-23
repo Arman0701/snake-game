@@ -1,6 +1,6 @@
 import { gameBoardElement } from "../game.js";
 
-export const board = {
+export let board = {
   width: gameBoardElement.width,
   height: gameBoardElement.height,
   backgroundColor: "white",
@@ -9,7 +9,7 @@ export const board = {
   unitSize: 25,
 };
 
-export const game = {
+export let game = {
   isRunning: false,
   isPaused: false,
   isVictory: false,
@@ -18,13 +18,13 @@ export const game = {
   tickIntervalId: null,
 };
 
-export const food = {
+export let food = {
   x: 0,
   y: 0,
   color: "red",
 };
 
-export const snake = {
+export let snake = {
   directionChanged: false,
   positions: [
     { x: board.unitSize * 4, y: 0 },

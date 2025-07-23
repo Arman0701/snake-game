@@ -1,10 +1,9 @@
 import { board, game, snake } from "../../constants/gameConfigs.js";
 import { playPauseButtonElement, runResetButtonElement } from "../../game.js";
+import { keybindingsGroup } from "../keyBindings/index.js";
+import { onPlayPauseGame } from "./onPlayPauseGame.js";
 
 export const onStopGame = () => {
-  console.log("game.tickIntervalId :::", game.tickIntervalId);
-
-  // must be tested with detaching listeners
   window.removeEventListener("keydown", keybindingsGroup);
   playPauseButtonElement.removeEventListener("click", onPlayPauseGame);
 
@@ -13,28 +12,22 @@ export const onStopGame = () => {
   playPauseButtonElement.textContent = "Pause";
   runResetButtonElement.textContent = "Run";
 
-  game = {
-    ...game,
-    isRunning: false,
-    isPaused: false,
-    isVictory: false,
-    score: 0,
-    tickIntervalId: null,
-  };
+  game.isRunning = false;
+  game.isPaused = false;
+  game.isVictory = false;
+  game.score = 0;
+  game.tickIntervalId = null;
 
-  snake = {
-    ...snake,
-    directionChanged: false,
-    positions: [
-      { x: board.unitSize * 4, y: 0 },
-      { x: board.unitSize * 3, y: 0 },
-      { x: board.unitSize * 2, y: 0 },
-      { x: board.unitSize, y: 0 },
-      { x: 0, y: 0 },
-    ],
-    velocity: {
-      x: board.unitSize,
-      y: 0,
-    },
+  snake.directionChanged = false;
+  snake.positions = [
+    { x: board.unitSize * 4, y: 0 },
+    { x: board.unitSize * 3, y: 0 },
+    { x: board.unitSize * 2, y: 0 },
+    { x: board.unitSize, y: 0 },
+    { x: 0, y: 0 },
+  ];
+  snake.velocity = {
+    x: board.unitSize,
+    y: 0,
   };
 };

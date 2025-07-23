@@ -1,5 +1,6 @@
 import { board, game, snake } from "../../constants/gameConfigs.js";
 import { onDisplayVictory } from "../display/onDisplayVictory.js";
+import { onStopGame } from "../game/onStopGame.js";
 
 export const onCheckVictory = () => {
   const { positions } = snake;
@@ -8,5 +9,6 @@ export const onCheckVictory = () => {
   if (isVictory) {
     game.isVictory = true;
     onDisplayVictory();
+    onStopGame();
   }
 };
