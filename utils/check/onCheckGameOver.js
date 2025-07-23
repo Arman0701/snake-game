@@ -1,4 +1,4 @@
-import { board, game, snake } from "../../constants/gameConfigs.js";
+import { board, snake } from "../../constants/gameConfigs.js";
 import { onGameOver } from "../game/onGameOver.js";
 
 export const onCheckGameOver = () => {
@@ -12,6 +12,7 @@ export const onCheckGameOver = () => {
     case snakeHead.x >= width:
     case snakeHead.y < 0:
     case snakeHead.y >= height:
+      console.log("Switch");
       onGameOver();
       break;
   }

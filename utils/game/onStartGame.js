@@ -1,14 +1,17 @@
 import { game } from "../../constants/gameConfigs.js";
-import { scoreTextElement } from "../../game.js";
-import { onCreateFood } from "../snake/onCreateFood.js";
-import { onDrawFood } from "../draw/onDrawFood.js";
+import {
+  playPauseButtonElement,
+  runResetButtonElement,
+  scoreTextElement,
+} from "../../game.js";
 import { onNextTick } from "../onNextTick.js";
 
 export const onStartGame = () => {
   game.isRunning = true;
   game.isPaused = false;
   scoreTextElement.textContent = game.score;
-  onCreateFood();
-  onDrawFood();
+  playPauseButtonElement.disabled = false;
+  runResetButtonElement.textContent = game.isRunning ? "Reset" : "Run";
+
   onNextTick();
 };

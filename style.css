@@ -11,7 +11,7 @@
   font-size: 100px;
 }
 #playPauseButton,
-#resetButton {
+#runResetButton {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 22px;
   width: 100px;
@@ -22,7 +22,7 @@
 }
 
 #playPauseButton:disabled,
-#resetButton:disabled {
+#runResetButton:disabled {
   cursor: default;
   border-color: aliceblue;
 }

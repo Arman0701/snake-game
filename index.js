@@ -25,6 +25,7 @@ import "./utils/game/onClearBoard.js";
 import "./utils/game/onGameOver.js";
 import "./utils/game/onPlayPauseGame.js";
 import "./utils/game/onResetGame.js";
+import "./utils/game/onRunResetGame.js";
 import "./utils/game/onStartGame.js";
 
 // key binding actions

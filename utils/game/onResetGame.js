@@ -1,10 +1,12 @@
 import { board, game, snake } from "../../constants/gameConfigs.js";
 import { playPauseButtonElement } from "../../game.js";
-import { onStartGame } from "./onStartGame.js";
+import { onClearBoard } from "./onClearBoard.js";
+import { onPrepareBoard } from "./onPrepareBoard.js";
 
 export const onResetGame = () => {
   const { unitSize } = board;
 
+  game.isPaused = false;
   game.score = 0;
   snake.velocity.x = unitSize;
   snake.velocity.y = 0;
@@ -17,6 +19,7 @@ export const onResetGame = () => {
   ];
   playPauseButtonElement.disabled = false;
   clearInterval(game.tickIntervalId);
-
-  onStartGame();
+  onClearBoard();
+  onPrepareBoard();
+  console.log("Reset action is done");
 };
