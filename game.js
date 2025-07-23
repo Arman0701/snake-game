@@ -1,9 +1,9 @@
-import { startGame } from "./utils/game/startGame.js";
-import { resetGame } from "./utils/game/resetGame.js";
-import { playPauseGame } from "./utils/game/playPauseGame.js";
-import { changeDirection } from "./utils/snake/changeDirection.js";
-import { playPauseAction } from "./utils/keyBindings/playPauseAction.js";
-import { resetGameAction } from "./utils/keyBindings/resetGameAction.js";
+import { onStartGame } from "./utils/game/onStartGame.js";
+import { onResetGame } from "./utils/game/onResetGame.js";
+import { onPlayPauseGame } from "./utils/game/onPlayPauseGame.js";
+import { onChangeDirection } from "./utils/snake/onChangeDirection.js";
+import { onPlayPauseAction } from "./utils/keyBindings/onPlayPauseAction.js";
+import { onResetGameAction } from "./utils/keyBindings/onResetGameAction.js";
 
 export const gameBoardElement = document.querySelector("#gameBoard");
 export const context = gameBoardElement.getContext("2d");
@@ -14,12 +14,12 @@ export const playPauseButtonElement =
 
 document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("keydown", (e) => {
-    changeDirection(e);
-    playPauseAction(e);
-    resetGameAction(e);
+    onChangeDirection(e);
+    onPlayPauseAction(e);
+    onResetGameAction(e);
   });
-  resetButtonElement.addEventListener("click", resetGame);
-  playPauseButtonElement.addEventListener("click", playPauseGame);
+  resetButtonElement.addEventListener("click", onResetGame);
+  playPauseButtonElement.addEventListener("click", onPlayPauseGame);
 
-  startGame();
+  onStartGame();
 });

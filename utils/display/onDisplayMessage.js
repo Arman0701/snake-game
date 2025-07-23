@@ -1,7 +1,7 @@
 import { board } from "../../constants/gameConfigs.js";
 import { context } from "../../game.js";
 
-export const displayMessage = (message) => {
+export const onDisplayMessage = (message) => {
   const { width, height } = board;
 
   context.font = "50px Arial";

@@ -1,6 +1,6 @@
 import { board, game, snake } from "../../constants/gameConfigs.js";
 
-export const checkGameOver = () => {
+export const onCheckGameOver = () => {
   const {
     positions: [snakeHead],
   } = snake;

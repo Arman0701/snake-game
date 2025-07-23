@@ -1,8 +1,8 @@
 import { board, game, snake } from "../../constants/gameConfigs.js";
 import { playPauseButtonElement } from "../../game.js";
-import { startGame } from "./startGame.js";
+import { onStartGame } from "./onStartGame.js";
 
-export const resetGame = () => {
+export const onResetGame = () => {
   const { unitSize } = board;
 
   game.score = 0;
@@ -18,5 +18,5 @@ export const resetGame = () => {
   playPauseButtonElement.disabled = false;
   clearInterval(game.tickIntervalId);
 
-  startGame();
+  onStartGame();
 };

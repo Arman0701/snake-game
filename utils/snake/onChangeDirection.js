@@ -1,7 +1,7 @@
 import { board, snake } from "../../constants/gameConfigs.js";
 import { KEYS } from "../../constants/keys.js";
 
-export const changeDirection = (event) => {
+export const onChangeDirection = (event) => {
   if (snake.directionChanged) {
     // to allow only one direction change per game tick
     return;

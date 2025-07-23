@@ -1,8 +1,8 @@
 import { food, game, snake } from "../../constants/gameConfigs.js";
 import { scoreTextElement } from "../../game.js";
-import { createFood } from "./createFood.js";
+import { onCreateFood } from "./onCreateFood.js";
 
-export const moveSnake = () => {
+export const onMoveSnake = () => {
   const { positions, velocity } = snake;
 
   const head = {
@@ -16,7 +16,7 @@ export const moveSnake = () => {
   if (isFoodEaten) {
     game.score += 1;
     scoreTextElement.textContent = game.score;
-    createFood();
+    onCreateFood();
   } else {
     positions.pop();
   }

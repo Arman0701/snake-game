@@ -1,6 +1,6 @@
 import { board, food, snake } from "../../constants/gameConfigs.js";
 
-export const createFood = () => {
+export const onCreateFood = () => {
   const possiblePositions = [];
   for (let x = 0; x < board.width; x += board.unitSize) {
     for (let y = 0; y < board.height; y += board.unitSize) {

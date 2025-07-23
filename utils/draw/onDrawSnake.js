@@ -1,7 +1,7 @@
 import { board, food, snake } from "../../constants/gameConfigs.js";
 import { context } from "../../game.js";
 
-export const drawSnake = () => {
+export const onDrawSnake = () => {
   const { headColor, bodyColor, borderColor, borderSize, positions } = snake;
 
   context.fillStyle = bodyColor;

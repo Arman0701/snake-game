@@ -7,33 +7,33 @@ import "./game.js";
 
 // UTILITY FUNCTIONS
 // checks
-import "./utils/check/checkGameOver.js";
-import "./utils/check/checkVictory.js";
+import "./utils/check/onCheckGameOver.js";
+import "./utils/check/onCheckVictory.js";
 
 // display
-import "./utils/display/displayGameOver.js";
-import "./utils/display/displayGamePaused.js";
-import "./utils/display/displayMessage.js";
-import "./utils/display/displayVictory.js";
+import "./utils/display/onDisplayGameOver.js";
+import "./utils/display/onDisplayGamePaused.js";
+import "./utils/display/onDisplayMessage.js";
+import "./utils/display/onDisplayVictory.js";
 
 // draw
-import "./utils/draw/drawFood.js";
-import "./utils/draw/drawSnake.js";
+import "./utils/draw/onDrawFood.js";
+import "./utils/draw/onDrawSnake.js";
 
 // game
-import "./utils/game/clearBoard.js";
-import "./utils/game/playPauseGame.js";
-import "./utils/game/resetGame.js";
-import "./utils/game/startGame.js";
+import "./utils/game/onClearBoard.js";
+import "./utils/game/onPlayPauseGame.js";
+import "./utils/game/onResetGame.js";
+import "./utils/game/onStartGame.js";
 
 // key binding actions
-import "./utils/keyBindings/playPauseAction.js";
-import "./utils/keyBindings/resetGameAction.js";
+import "./utils/keyBindings/onPlayPauseAction.js";
+import "./utils/keyBindings/onResetGameAction.js";
 
 // snake
-import "./utils/snake/changeDirection.js";
-import "./utils/snake/createFood.js";
-import "./utils/snake/moveSnake.js";
+import "./utils/snake/onChangeDirection.js";
+import "./utils/snake/onCreateFood.js";
+import "./utils/snake/onMoveSnake.js";
 
 // common functions
-import "./utils/nextTick.js";
+import "./utils/onNextTick.js";
