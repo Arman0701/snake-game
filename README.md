@@ -11,19 +11,22 @@ This is a classic Snake game implemented in JavaScript. The project features mod
 
 ## How to Run with Docker Compose
 
-1. **Build and start the container:**
+1. **Start the container using prebuilt image:**
+
+   You may wait a bit longer to pull the image. It's just for first launch.
 
    ```bash
    # older version (version 1) of docker-compose
-   docker-compose up --build
+   docker-compose up
 
    # higher versions of docker-compose
-   docker compose up --build
+   docker compose up
    ```
 
    This will build the Docker image and start the web service.
 
 2. **Access the game:**
+
    Open your browser and go to [http://localhost:3000](http://localhost:3000)
 
 ## Project Structure
