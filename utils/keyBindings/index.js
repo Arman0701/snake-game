@@ -1,9 +1,9 @@
 import { onChangeDirection } from "../snake/onChangeDirection.js";
 import { onPlayPauseAction } from "./onPlayPauseAction.js";
-import { onResetGameAction } from "./onResetGameAction.js";
+import { onRunResetAction } from "./onRunResetAction.js";
 
-export const keybindingsGroup = (e) => {
+export const keyBindingsGroup = (e) => {
   onChangeDirection(e);
   onPlayPauseAction(e);
-  onResetGameAction(e);
+  onRunResetAction(e);
 };

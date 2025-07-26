@@ -1,43 +1,34 @@
-import { gameBoardElement } from "../game.js";
+import { boardElement } from "../game.js";
 
-export let board = {
-  width: gameBoardElement.width,
-  height: gameBoardElement.height,
-  backgroundColor: "white",
-  boardBorderColor: "black",
-  boardBorderSize: 2,
-  unitSize: 25,
-};
-
-export let game = {
-  isRunning: false,
-  isPaused: false,
-  isVictory: false,
+export const unitSize = 20;
+export const game = {
   score: 0,
-  tickFrequency: 200,
-  tickIntervalId: null,
+  unitHeight: Math.floor(boardElement.height / unitSize),
+  unitWidth: Math.floor(boardElement.width / unitSize),
+  isRunning: false,
+  isOver: false,
+  isVictory: false,
+  isPaused: false,
+  timeoutId: null,
 };
 
-export let food = {
-  x: 0,
-  y: 0,
-  color: "red",
-};
-
-export let snake = {
-  directionChanged: false,
+export const snake = {
+  direction: "right",
+  isDirectionChanged: false,
   positions: [
-    { x: board.unitSize * 4, y: 0 },
-    { x: board.unitSize * 3, y: 0 },
-    { x: board.unitSize * 2, y: 0 },
-    { x: board.unitSize, y: 0 },
+    { x: 4, y: 0 },
+    { x: 3, y: 0 },
+    { x: 2, y: 0 },
+    { x: 1, y: 0 },
     { x: 0, y: 0 },
   ],
   velocity: {
-    x: board.unitSize,
+    x: 1,
     y: 0,
   },
-  bodyColor: "lightgreen",
-  borderColor: "red",
-  borderSize: 2,
+};
+
+export const food = {
+  x: 0,
+  y: 0,
 };

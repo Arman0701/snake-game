@@ -1,5 +1,6 @@
 import { onDisplayMessage } from "./onDisplayMessage.js";
 
 export const onDisplayGameOver = () => {
-  onDisplayMessage("GAME OVER!");
+  // show user the game is over
+  onDisplayMessage("Game is over!");
 };

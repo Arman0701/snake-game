@@ -1,10 +1,10 @@
 import { KEYS } from "../../constants/keys.js";
 import { onPlayPauseGame } from "../game/onPlayPauseGame.js";
 
-export const onPlayPauseAction = (event) => {
-  const keyPressed = event.keyCode;
+export const onPlayPauseAction = (e) => {
+  const pressed = e.keyCode;
 
-  if (keyPressed === KEYS.Key_P) {
+  if (pressed === KEYS.Key_P) {
     onPlayPauseGame();
   }
 };

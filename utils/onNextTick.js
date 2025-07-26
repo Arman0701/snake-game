@@ -1,23 +1,27 @@
-import { game, snake } from "../constants/gameConfigs.js";
+import { game } from "../constants/gameConfigs.js";
 import { onCheckGameOver } from "./check/onCheckGameOver.js";
 import { onCheckVictory } from "./check/onCheckVictory.js";
 import { onDrawFood } from "./draw/onDrawFood.js";
 import { onDrawSnake } from "./draw/onDrawSnake.js";
 import { onClearBoard } from "./game/onClearBoard.js";
+import { onFreeMove } from "./game/onFreeMove.js";
 import { onMoveSnake } from "./snake/onMoveSnake.js";
 
 export const onNextTick = () => {
-  const { isPaused, isRunning, isVictory, tickFrequency } = game;
+  // periodically update game state
+  const { isPaused, isRunning, isVictory } = game;
 
-  game.tickIntervalId = setInterval(() => {
-    if (isRunning && !isPaused && !isVictory) {
-      snake.directionChanged = false;
-      onCheckVictory();
+  if (isRunning && !isPaused && !isVictory) {
+    game.timeoutId = setTimeout(() => {
       onClearBoard();
-      onDrawFood();
-      onMoveSnake();
-      onDrawSnake();
       onCheckGameOver();
-    }
-  }, tickFrequency);
+      onCheckVictory();
+      onDrawFood();
+      onDrawSnake();
+      onFreeMove();
+      onMoveSnake();
+
+      onNextTick();
+    }, 200);
+  }
 };

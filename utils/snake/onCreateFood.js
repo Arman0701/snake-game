@@ -1,21 +1,16 @@
-import { board, food, snake } from "../../constants/gameConfigs.js";
+import { food, snake, game } from "../../constants/gameConfigs.js";
 
 export const onCreateFood = () => {
-  const possiblePositions = [];
-  for (let x = 0; x < board.width; x += board.unitSize) {
-    for (let y = 0; y < board.height; y += board.unitSize) {
-      possiblePositions.push({ x, y });
-    }
-  }
+  // randomly generate a new position on the board where the food cell would be located
+  const getRandomNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min)) + min;
+  };
 
-  const snakeSet = new Set(snake.positions.map(({ x, y }) => `${x},${y}`));
-  const freePositions = possiblePositions.filter(
-    (pos) => !snakeSet.has(`${pos.x},${pos.y}`)
-  );
+  let overlap = true;
+  while (overlap) {
+    food.x = getRandomNumber(0, game.unitWidth);
+    food.y = getRandomNumber(0, game.unitHeight);
 
-  if (freePositions.length > 0) {
-    const index = Math.floor(Math.random() * freePositions.length);
-    food.x = freePositions[index].x;
-    food.y = freePositions[index].y;
+    overlap = snake.positions.find(({ x, y }) => food.x === x && food.y === y);
   }
 };

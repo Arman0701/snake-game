@@ -1,16 +1,22 @@
 import { game } from "../../constants/gameConfigs.js";
-import { playPauseButtonElement } from "../../game.js";
-import { onDisplayGamePaused } from "../display/onDisplayGamePaused.js";
+import { playPauseButton } from "../../game.js";
+import { onDisplayPaused } from "../display/onDisplayPaused.js";
 import { onNextTick } from "../onNextTick.js";
 
 export const onPlayPauseGame = () => {
+  // toggle game play/pause state
   game.isPaused = !game.isPaused;
-  playPauseButtonElement.textContent = game.isPaused ? "Play" : "Pause";
-  clearInterval(game.tickIntervalId);
+
+  if (!game.isRunning) {
+    return;
+  }
 
   if (game.isPaused) {
-    onDisplayGamePaused();
+    onDisplayPaused();
+    clearTimeout(game.timeoutId);
+    playPauseButton.textContent = "Play";
   } else {
+    playPauseButton.textContent = "Pause";
     onNextTick();
   }
 };
