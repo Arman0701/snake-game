@@ -1,9 +1,8 @@
-import { board, food } from "../../constants/gameConfigs.js";
+import { unitSize, food } from "../../constants/gameConfigs.js";
 import { context } from "../../game.js";
 
 export const onDrawFood = () => {
-  const { x, y, color } = food;
-
-  context.fillStyle = color;
-  context.fillRect(x, y, board.unitSize, board.unitSize);
+  // draw a food cell on the board
+  context.fillStyle = "red";
+  context.fillRect(food.x * unitSize, food.y * unitSize, unitSize, unitSize);
 };

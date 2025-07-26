@@ -1,40 +1,50 @@
-import { board, snake } from "../../constants/gameConfigs.js";
+import { snake } from "../../constants/gameConfigs.js";
 import { KEYS } from "../../constants/keys.js";
 
-export const onChangeDirection = (event) => {
-  if (snake.directionChanged) {
-    // to allow only one direction change per game tick
+export const onChangeDirection = (e) => {
+  // change the snake direction
+  if (snake.isDirectionChanged) {
     return;
   }
 
-  snake.directionChanged = true;
-  const keyPressed = event.keyCode;
+  const movingUp = snake.velocity.y === -1;
+  const movingDown = snake.velocity.y === 1;
+  const movingLeft = snake.velocity.x === -1;
+  const movingRight = snake.velocity.x === 1;
 
-  const goingUp = snake.velocity.y === -board.unitSize;
-  const goingDown = snake.velocity.y === board.unitSize;
-  const goingRight = snake.velocity.x === board.unitSize;
-  const goingLeft = snake.velocity.x === -board.unitSize;
+  const pressed = e.keyCode;
 
-  switch (true) {
-    case (keyPressed === KEYS.Key_Arrow_Left && !goingRight) ||
-      (keyPressed === KEYS.Key_A && !goingRight):
-      snake.velocity.x = -board.unitSize;
-      snake.velocity.y = 0;
-      break;
-    case (keyPressed === KEYS.Key_Arrow_Up && !goingDown) ||
-      (keyPressed === KEYS.Key_W && !goingDown):
-      snake.velocity.x = 0;
-      snake.velocity.y = -board.unitSize;
-      break;
-    case (keyPressed === KEYS.Key_Arrow_Right && !goingLeft) ||
-      (keyPressed === KEYS.Key_D && !goingLeft):
-      snake.velocity.x = board.unitSize;
-      snake.velocity.y = 0;
-      break;
-    case (keyPressed === KEYS.Key_Arrow_Down && !goingUp) ||
-      (keyPressed === KEYS.Key_S && !goingUp):
-      snake.velocity.x = 0;
-      snake.velocity.y = board.unitSize;
-      break;
+  if (
+    (pressed === KEYS.Key_Arrow_Up || pressed === KEYS.Key_W) &&
+    !movingDown
+  ) {
+    snake.direction = "up";
+    snake.velocity.y = -1;
+    snake.velocity.x = 0;
   }
+  if (
+    (pressed === KEYS.Key_Arrow_Down || pressed === KEYS.Key_S) &&
+    !movingUp
+  ) {
+    snake.direction = "down";
+    snake.velocity.y = 1;
+    snake.velocity.x = 0;
+  }
+  if (
+    (pressed === KEYS.Key_Arrow_Left || pressed === KEYS.Key_A) &&
+    !movingRight
+  ) {
+    snake.direction = "left";
+    snake.velocity.y = 0;
+    snake.velocity.x = -1;
+  }
+  if (
+    (pressed === KEYS.Key_Arrow_Right || pressed === KEYS.Key_D) &&
+    !movingLeft
+  ) {
+    snake.direction = "right";
+    snake.velocity.y = 0;
+    snake.velocity.x = 1;
+  }
+  snake.isDirectionChanged = true;
 };

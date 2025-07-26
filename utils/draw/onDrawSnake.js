@@ -1,20 +1,19 @@
-import { board, food, snake } from "../../constants/gameConfigs.js";
+import { snake, unitSize } from "../../constants/gameConfigs.js";
 import { context } from "../../game.js";
 
 export const onDrawSnake = () => {
-  const { bodyColor, borderColor, borderSize, positions } = snake;
+  // draw current snake cells on the board
+  context.strokeStyle = "black";
+  context.lineWidth = 1;
 
-  context.fillStyle = bodyColor;
-  context.strokeStyle = borderColor;
-  context.lineWidth = borderSize;
-
-  positions.forEach(({ x, y }, index) => {
-    if (food.x === x && food.y === y) {
-      context.fillStyle = food.color;
+  snake.positions.forEach((cell, index) => {
+    if (index === 0) {
+      context.fillStyle = "lightgreen";
     } else {
-      context.fillStyle = bodyColor;
+      context.fillStyle = "green";
     }
-    context.fillRect(x, y, board.unitSize, board.unitSize);
-    context.strokeRect(x, y, board.unitSize, board.unitSize);
+    const bounds = [cell.x * unitSize, cell.y * unitSize, unitSize, unitSize];
+    context.strokeRect(...bounds);
+    context.fillRect(...bounds);
   });
 };
