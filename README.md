@@ -2,6 +2,18 @@
 
 This is a classic Snake game implemented in JavaScript. The project features modular code, customizable settings, and a simple web interface for playing the game.
 
+## What's new?
+
+###### Do you want to see the difference in the code level? [Click here!](https://github.com/Arman0701/snake-game/pull/1/commits/cac57b54dee1bc0834caaf849382f8d804d1ec10)
+
+#### Upgrades list:
+
+- Convenient coordinates calculation.
+- One variable - one state - one action approach.
+- Flatten, appropriate code.
+- Dynamic code improvement.
+- Critical bug-fixes.
+
 ## Features
 
 - Playable Snake game in the browser
