@@ -5,6 +5,6 @@ export const onVictory = () => {
   // do when user wins
   game.isVictory = true;
   game.isRunning = false;
-  clearInterval(game.timeoutId);
+  clearTimeout(game.timeoutId);
   onDisplayVictory();
 };

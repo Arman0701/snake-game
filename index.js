@@ -22,7 +22,6 @@ import "./utils/draw/onDrawSnake.js";
 
 // game
 import "./utils/game/onClearBoard.js";
-import "./utils/game/onFreeMove.js";
 import "./utils/game/onGameOver.js";
 import "./utils/game/onPlayPauseGame.js";
 import "./utils/game/onPrepareGame.js";

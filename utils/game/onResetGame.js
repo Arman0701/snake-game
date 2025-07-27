@@ -1,4 +1,5 @@
 import { food, game, snake } from "../../constants/gameConfigs.js";
+import { scoreElement } from "../../game.js";
 import { onPrepareGame } from "./onPrepareGame.js";
 
 export const onResetGame = () => {
@@ -30,6 +31,7 @@ export const onResetGame = () => {
   playPauseButton.disabled = true;
   playPauseButton.textContent = "Pause";
   runResetButton.textContent = "Run";
+  scoreElement.textContent = "0";
 
   onPrepareGame();
 };

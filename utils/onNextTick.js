@@ -4,7 +4,6 @@ import { onCheckVictory } from "./check/onCheckVictory.js";
 import { onDrawFood } from "./draw/onDrawFood.js";
 import { onDrawSnake } from "./draw/onDrawSnake.js";
 import { onClearBoard } from "./game/onClearBoard.js";
-import { onFreeMove } from "./game/onFreeMove.js";
 import { onMoveSnake } from "./snake/onMoveSnake.js";
 
 export const onNextTick = () => {
@@ -18,7 +17,6 @@ export const onNextTick = () => {
       onCheckVictory();
       onDrawFood();
       onDrawSnake();
-      onFreeMove();
       onMoveSnake();
 
       onNextTick();

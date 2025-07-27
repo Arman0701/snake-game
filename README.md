@@ -32,46 +32,45 @@ This is a classic Snake game implemented in JavaScript. The project features mod
 ## Project Structure
 
 ```
-├── constants/
-│   ├── gameConfigs.js
-│   └── keys.js
-├── utils/
-│   ├── check/
-│   │   ├── onCheckGameOver.js
-│   │   └── onCheckVictory.js
-│   ├── display/
-│   │   ├── onDisplayGameOver.js
-│   │   ├── onDisplayGamePaused.js
-│   │   ├── onDisplayMessage.js
-│   │   └── onDisplayVictory.js
-│   ├── draw/
-│   │   ├── onDrawFood.js
-│   │   └── onDrawSnake.js
-│   ├── game/
-│   │   ├── onClearBoard.js
-│   │   ├── onGameOver.js
-│   │   ├── onPlayPauseGame.js
-│   │   ├── onPrepareBoard.js
-│   │   ├── onResetGame.js
-│   │   ├── onRunResetGame.js
-│   │   ├── onStartGame.js
-│   │   └── onStopGame.js
-│   ├── keyBindings/
-│   │   ├── index.js
-│   │   ├── onPlayPauseAction.js
-│   │   └── onResetGameAction.js
-│   ├── snake/
-│   │   ├── onChangeDirection.js
-│   │   ├── onCreateFood.js
-│   │   └── onMoveSnake.js
-│   └── onNextTick.js
+├── constants
+│  ├── gameConfigs.js
+│  └── keys.js
+├── utils
+│  ├── check
+│  │  ├── onCheckGameOver.js
+│  │  └── onCheckVictory.js
+│  ├── display
+│  │  ├── onDisplayGameOver.js
+│  │  ├── onDisplayMessage.js
+│  │  ├── onDisplayPaused.js
+│  │  └── onDisplayVictory.js
+│  ├── draw
+│  │  ├── onDrawFood.js
+│  │  └── onDrawSnake.js
+│  ├── game
+│  │  ├── onClearBoard.js
+│  │  ├── onGameOver.js
+│  │  ├── onPlayPauseGame.js
+│  │  ├── onPrepareGame.js
+│  │  ├── onResetGame.js
+│  │  ├── onRunResetGame.js
+│  │  ├── onStopGame.js
+│  │  └── onVictory.js
+│  ├── keyBindings
+│  │  ├── index.js
+│  │  ├── onPlayPauseAction.js
+│  │  └── onRunResetAction.js
+│  ├── snake
+│  │  ├── onChangeDirection.js
+│  │  ├── onCreateFood.js
+│  │  └── onMoveSnake.js
+│  └── onNextTick.js
 ├── .dockerignore
+├── README.md
 ├── docker-compose.yml
-├── Dockerfile
 ├── game.js
 ├── index.html
 ├── index.js
-├── README.md
 └── style.css
 ```
 
